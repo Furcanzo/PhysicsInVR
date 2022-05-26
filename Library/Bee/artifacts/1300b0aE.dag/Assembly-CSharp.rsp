@@ -367,6 +367,8 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.SpatialTracking.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+"Assets/Scripts/Button.cs"
+"Assets/Scripts/InclinedPlane/InclinedPlane.cs"
 "Assets/Scripts/ShowVectors.cs"
 -langversion:9.0
 
