@@ -41,9 +41,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ShowVectors.cs" />
      <Compile Include="Assets\Scripts\InclinedPlane\InclinedPlane.cs" />
      <Compile Include="Assets\Scripts\Button.cs" />
+     <Compile Include="Assets\Scripts\ShowVectors.cs" />
+     <Compile Include="Assets\Scripts\HandPresencePhysics.cs" />
+     <Compile Include="Assets\Scripts\HandPresence.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

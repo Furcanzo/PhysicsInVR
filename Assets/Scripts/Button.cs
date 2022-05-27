@@ -15,11 +15,14 @@ public class Button : MonoBehaviour
 
     private AudioSource _sound;
 
+    private MeshRenderer _meshRenderer;
+
     private bool _isPressed;
     // Start is called before the first frame update
     void Start()
     {
         _sound = GetComponent<AudioSource>();
+        _meshRenderer = GetComponent<MeshRenderer>();
         _isPressed = false;
     }
 
@@ -27,11 +30,12 @@ public class Button : MonoBehaviour
     {
         if (!_isPressed)
         {
-
+            
             _presser = other.gameObject;
             onPress.Invoke();
             _sound.Play();
             _isPressed = true;
+            _meshRenderer.enabled = false;
         }
     }
 
@@ -41,6 +45,7 @@ public class Button : MonoBehaviour
         {
             onRelease.Invoke();
             _isPressed = false;
+            _meshRenderer.enabled = true;
         }
     }
 
