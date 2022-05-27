@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -30,7 +27,6 @@ public class Button : MonoBehaviour
     {
         if (!_isPressed)
         {
-            
             _presser = other.gameObject;
             onPress.Invoke();
             _sound.Play();
@@ -41,16 +37,10 @@ public class Button : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == _presser)
-        {
-            onRelease.Invoke();
-            _isPressed = false;
-            _meshRenderer.enabled = true;
-        }
+        if (other.gameObject != _presser) return;
+        onRelease.Invoke();
+        _isPressed = false;
+        _meshRenderer.enabled = true;
     }
-
-    public void test()
-    {
-        Debug.Log("______________________________________!!!!!!!!!!!!");
-    }
+    
 }

@@ -12,13 +12,11 @@ public class ShowVectors : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        if (!rb) Debug.LogError("Rigidbody Required on " + gameObject.name);
     }
 
     // Update is called once per frame
     void Update()
     {
-        velocity = rb.velocity;
         
     }
 }
