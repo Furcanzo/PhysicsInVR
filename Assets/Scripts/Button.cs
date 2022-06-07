@@ -3,8 +3,6 @@ using UnityEngine.Events;
 
 public class Button : MonoBehaviour
 {
-    public GameObject button;
-
     public UnityEvent onPress;
     public UnityEvent onRelease;
 

@@ -372,6 +372,7 @@
 "Assets/Scripts/HandPresencePhysics.cs"
 "Assets/Scripts/InclinedPlane/InclinationSetter.cs"
 "Assets/Scripts/InclinedPlane/InclinedPlane.cs"
+"Assets/Scripts/Lever.cs"
 "Assets/Scripts/ShowVectors.cs"
 -langversion:9.0
 
