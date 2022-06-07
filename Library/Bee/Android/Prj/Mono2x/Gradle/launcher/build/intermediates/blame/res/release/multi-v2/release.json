@@ -1,10 +1,51 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Roberto\\Documents\\Repo\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\res\\merged\\release\\values_values.arsc.flat",
+            "outputFile": "C:\\Users\\ASUF556UVDM154T\\universita\\Tesi\\Progetto\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\res\\merged\\release\\values-v21_values-v21.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Roberto\\Documents\\Repo\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\ASUF556UVDM154T\\universita\\Tesi\\Progetto\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values-v21\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "0",
+                        "startOffsets": "53",
+                        "endLines": "3",
+                        "endColumns": "8",
+                        "endOffsets": "153"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "8",
+                        "endOffsets": "154"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\ASUF556UVDM154T\\universita\\Tesi\\Progetto\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\res\\merged\\release\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\ASUF556UVDM154T\\universita\\Tesi\\Progetto\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "2,2",
+                        "startOffsets": "55,103",
+                        "endColumns": "46,65",
+                        "endOffsets": "99,166"
+                    },
+                    "to": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "101,150",
+                        "endColumns": "48,67",
+                        "endOffsets": "145,213"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUF556UVDM154T\\universita\\Tesi\\Progetto\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "5,2,7",
                         "startColumns": "0,0,0",
@@ -23,24 +64,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Roberto\\Documents\\Repo\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "2,2",
-                        "startOffsets": "55,103",
-                        "endColumns": "46,65",
-                        "endOffsets": "99,166"
-                    },
-                    "to": {
-                        "startLines": "3,4",
-                        "startColumns": "4,4",
-                        "startOffsets": "101,150",
-                        "endColumns": "48,67",
-                        "endOffsets": "145,213"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Roberto\\Documents\\Repo\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\ids.xml",
+                    "source": "C:\\Users\\ASUF556UVDM154T\\universita\\Tesi\\Progetto\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\ids.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -59,10 +83,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Roberto\\Documents\\Repo\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\res\\merged\\release\\values-v28_values-v28.arsc.flat",
+            "outputFile": "C:\\Users\\ASUF556UVDM154T\\universita\\Tesi\\Progetto\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\res\\merged\\release\\values-v28_values-v28.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Roberto\\Documents\\Repo\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values-v28\\styles.xml",
+                    "source": "C:\\Users\\ASUF556UVDM154T\\universita\\Tesi\\Progetto\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values-v28\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "0",
@@ -78,30 +102,6 @@
                         "endLines": "4",
                         "endColumns": "8",
                         "endOffsets": "229"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\Roberto\\Documents\\Repo\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\res\\merged\\release\\values-v21_values-v21.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Roberto\\Documents\\Repo\\PhysicsInVR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values-v21\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "0",
-                        "startOffsets": "53",
-                        "endLines": "3",
-                        "endColumns": "8",
-                        "endOffsets": "153"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "3",
-                        "endColumns": "8",
-                        "endOffsets": "154"
                     }
                 }
             ]
