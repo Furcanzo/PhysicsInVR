@@ -1,36 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class Lever : MonoBehaviour
 {
-
-    public float value;
-    
+    // [-1, 1]
+    public float startingValue = 0;
     public UnityEvent<float> onMove;
     
-    private Quaternion _oldRotation;
+    private float _oldAngle;
+    private float _value;
+    private HingeJoint _hingeJoint;
+    
     // Start is called before the first frame update
     void Start()
     {
-        _oldRotation = transform.rotation;
+        _hingeJoint = GetComponent<HingeJoint>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.rotation != _oldRotation)
+        if (Math.Abs(_hingeJoint.angle - _oldAngle) > 0.2f)
         {
-            value = transform.rotation.eulerAngles.x/60.0f;
-            onMove.Invoke(value);
-            
+            _value = AngleToValue(_hingeJoint.angle);
+            onMove.Invoke(_value);
         }
 
-        _oldRotation = transform.rotation;
+        _oldAngle = _hingeJoint.angle;
     }
-    
-    
-    
+
+    //max 420 min 300 
+    private float AngleToValue(float angle)
+    {
+        return angle / 60.0f;
+    }
+
 }
