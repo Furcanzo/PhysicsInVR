@@ -43,7 +43,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\HandPresencePhysics.cs" />
      <Compile Include="Assets\Scripts\InclinedPlane\PlankPropertiesSetter.cs" />
-     <Compile Include="Assets\Scripts\InclinedPlane\InclinedPlane.cs" />
+     <Compile Include="Assets\Scripts\InclinedPlane\Spawn.cs" />
      <Compile Include="Assets\Scripts\Button.cs" />
      <Compile Include="Assets\Scripts\ShowVectors.cs" />
      <Compile Include="Assets\Scripts\Lever.cs" />

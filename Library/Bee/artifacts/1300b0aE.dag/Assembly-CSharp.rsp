@@ -369,8 +369,8 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/Scripts/Button.cs"
 "Assets/Scripts/HandPresencePhysics.cs"
-"Assets/Scripts/InclinedPlane/InclinedPlane.cs"
 "Assets/Scripts/InclinedPlane/PlankPropertiesSetter.cs"
+"Assets/Scripts/InclinedPlane/Spawn.cs"
 "Assets/Scripts/Lever.cs"
 "Assets/Scripts/ShowVectors.cs"
 -langversion:9.0

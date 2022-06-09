@@ -6,13 +6,14 @@ public class ShowVectors : MonoBehaviour
     
     public GameObject vectorModel;
 
-    public float scaleFactor = 3.0f;
+    public float scaleFactor = 5.0f;
     public float proportion = 2.0f;
 
-    public bool showCollision = true;
-    public bool showGravity= true;
-    public bool showFriction = true;
-    public bool showAddedForce = true;
+    public bool showCollision;
+    public bool showGravity;
+    public bool showFriction;
+    public bool showNormal;
+    public bool showAddedForce;
     
     private Rigidbody _rb;
     private PhysicMaterial _material;
@@ -23,6 +24,8 @@ public class ShowVectors : MonoBehaviour
     private GameObject _gravityVector;
     private Vector3 _frictionForce;
     private GameObject _frictionVector;
+    private Vector3 _normalForce;
+    private GameObject _normalVector;
     private Vector3 _addedForce;
     private GameObject _addedForceVector;
     
@@ -30,26 +33,29 @@ public class ShowVectors : MonoBehaviour
     void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
-        _material = gameObject.GetComponent<PhysicMaterial>();
+        _material = gameObject.GetComponent<Collider>().material;
         if (showCollision)
         {
-            _collisionVector = Instantiate(vectorModel);
+            _collisionVector = Instantiate(vectorModel, gameObject.transform, true);
         }
         if (showGravity)
         {
-            _gravityVector = Instantiate(vectorModel);
+            _gravityVector = Instantiate(vectorModel, gameObject.transform, true);
         }
         if (showFriction)
         {
-            _frictionVector = Instantiate(vectorModel);
+            _frictionVector = Instantiate(vectorModel, gameObject.transform, true);
+        }
+        if (showNormal)
+        {
+            _normalVector = Instantiate(vectorModel, gameObject.transform, true);
         }
         if (showAddedForce)
         {
-            _addedForceVector = Instantiate(vectorModel);
+            _addedForceVector = Instantiate(vectorModel, gameObject.transform, true);
         }
     }
-
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         var position = transform.position;
@@ -77,6 +83,14 @@ public class ShowVectors : MonoBehaviour
             _frictionVector.transform.position = position;
             _frictionVector.transform.rotation = Quaternion.LookRotation(_frictionForce, Vector3.up);
         }
+        
+        if (showNormal)
+        {
+            float normalScale = 10.0f * scaleFactor * (float)Math.Log(_normalForce.magnitude!=0 ? _normalForce.magnitude : 1);
+            _normalVector.transform.localScale = new Vector3(normalScale/proportion,normalScale/proportion,normalScale);
+            _normalVector.transform.position = position;
+            _normalVector.transform.rotation = Quaternion.LookRotation(_normalForce, Vector3.up);
+        }
 
         if (showAddedForce)
         {
@@ -98,8 +112,9 @@ public class ShowVectors : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        
-        //TODO friction
+        //todo directions
+        _normalForce = -_gravityForce * (float)Math.Cos(transform.rotation.eulerAngles.z);
+        _frictionForce = _normalForce*_material.dynamicFriction;
     }
 
     public void ApplyForce(Vector3 force)
