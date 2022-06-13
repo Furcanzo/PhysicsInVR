@@ -62,42 +62,82 @@ public class ShowVectors : MonoBehaviour
         _gravityForce = _rb.mass * Physics.gravity;
         if (showCollision)
         {
-            float collisionScale = 10.0f * scaleFactor * (float)Math.Log(_collisionForce.magnitude!=0 ? _collisionForce.magnitude : 1);
-            _collisionVector.transform.localScale = new Vector3(collisionScale/proportion,collisionScale/proportion,collisionScale);
-            _collisionVector.transform.position = position;
-            _collisionVector.transform.rotation = Quaternion.LookRotation(_collisionForce, Vector3.up);
+            if (_collisionForce != Vector3.zero)
+            {
+                _collisionVector.SetActive(true);
+                float collisionScale = 10.0f * scaleFactor * (float)Math.Log(_collisionForce.magnitude!=0 ? _collisionForce.magnitude : 1);
+                _collisionVector.transform.localScale = new Vector3(collisionScale/proportion,collisionScale/proportion,collisionScale);
+                _collisionVector.transform.position = position;
+                _collisionVector.transform.rotation = Quaternion.LookRotation(_collisionForce, Vector3.up);
+            }
+            else
+            {
+                _collisionVector.SetActive(false);
+            }
         }
 
         if (showGravity)
         {
-            float gravityScale = 10.0f * scaleFactor * (float)Math.Log(_gravityForce.magnitude!=0 ? _gravityForce.magnitude : 1);
-            _gravityVector.transform.localScale = new Vector3(gravityScale / proportion, gravityScale / proportion, gravityScale);
-            _gravityVector.transform.position = position;
-            _gravityVector.transform.rotation = Quaternion.LookRotation(_gravityForce, Vector3.up);
+            if (_gravityForce != Vector3.zero)
+            {
+                _gravityVector.SetActive(true);
+                float gravityScale = 10.0f * scaleFactor * (float)Math.Log(_gravityForce.magnitude!=0 ? _gravityForce.magnitude : 1);
+                _gravityVector.transform.localScale = new Vector3(gravityScale / proportion, gravityScale / proportion, gravityScale);
+                _gravityVector.transform.position = position;
+                _gravityVector.transform.rotation = Quaternion.LookRotation(_gravityForce, Vector3.up);
+            }
+            else
+            {
+                _gravityVector.SetActive(false);
+            }
         }
 
         if (showFriction)
         {
-            float frictionScale = 10.0f * scaleFactor * (float)Math.Log(_frictionForce.magnitude!=0 ? _frictionForce.magnitude : 1);
-            _frictionVector.transform.localScale = new Vector3(frictionScale/proportion,frictionScale/proportion,frictionScale);
-            _frictionVector.transform.position = position;
-            _frictionVector.transform.rotation = Quaternion.LookRotation(_frictionForce, Vector3.up);
+            if (_frictionForce != Vector3.zero)
+            {
+                _frictionVector.SetActive(true);
+                float frictionScale = 10.0f * scaleFactor * (float)Math.Log(_frictionForce.magnitude!=0 ? _frictionForce.magnitude : 1);
+                _frictionVector.transform.localScale = new Vector3(frictionScale/proportion,frictionScale/proportion,frictionScale);
+                _frictionVector.transform.position = position;
+                _frictionVector.transform.rotation = Quaternion.LookRotation(_frictionForce, Vector3.up);
+            }
+            else
+            {
+                _frictionVector.SetActive(false);
+            }
         }
         
         if (showNormal)
         {
-            float normalScale = 10.0f * scaleFactor * (float)Math.Log(_normalForce.magnitude!=0 ? _normalForce.magnitude : 1);
-            _normalVector.transform.localScale = new Vector3(normalScale/proportion,normalScale/proportion,normalScale);
-            _normalVector.transform.position = position;
-            _normalVector.transform.rotation = Quaternion.LookRotation(_normalForce, Vector3.up);
+            if (_normalForce != Vector3.zero)
+            {
+                _normalVector.SetActive(true);
+                float normalScale = 10.0f * scaleFactor * (float)Math.Log(_normalForce.magnitude!=0 ? _normalForce.magnitude : 1);
+                _normalVector.transform.localScale = new Vector3(normalScale/proportion,normalScale/proportion,normalScale);
+                _normalVector.transform.position = position;
+                _normalVector.transform.rotation = Quaternion.LookRotation(_normalForce, Vector3.up);
+            }
+            else
+            {
+                _normalVector.SetActive(false);
+            }
         }
 
         if (showAddedForce)
         {
-            float addedScale = 10.0f * scaleFactor * (float)Math.Log(_addedForce.magnitude!=0 ? _addedForce.magnitude : 1);
-            _addedForceVector.transform.localScale = new Vector3(addedScale/proportion,addedScale/proportion,addedScale);
-            _addedForceVector.transform.position = position;
-            _addedForceVector.transform.rotation = Quaternion.LookRotation(_addedForce, Vector3.up);
+            if (_addedForce != Vector3.zero)
+            {
+                _addedForceVector.SetActive(true);
+                float addedScale = 10.0f * scaleFactor * (float)Math.Log(_addedForce.magnitude!=0 ? _addedForce.magnitude : 1);
+                _addedForceVector.transform.localScale = new Vector3(addedScale/proportion,addedScale/proportion,addedScale);
+                _addedForceVector.transform.position = position;
+                _addedForceVector.transform.rotation = Quaternion.LookRotation(_addedForce, Vector3.up);
+            }
+            else
+            {
+                _addedForceVector.SetActive(false);
+            }
         }
 
     }
@@ -108,13 +148,22 @@ public class ShowVectors : MonoBehaviour
         {
             _collisionForce = other.impulse / Time.deltaTime;
         }
+
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionStay(Collision other)
     {
-        //todo directions
-        _normalForce = -_gravityForce * (float)Math.Cos(transform.rotation.eulerAngles.z);
-        _frictionForce = _normalForce*_material.dynamicFriction;
+        //todo check
+        float frictionParam = _rb.velocity != Vector3.zero //Check if the object is moving
+            ? other.collider.sharedMaterial.dynamicFriction //If it use the dynamic friction parameter
+            : other.collider.sharedMaterial.staticFriction; //Otherwise use the static friction
+        
+        _normalForce = Quaternion.Euler(0, 0,transform.rotation.eulerAngles.z) * (-_gravityForce * (float)Math.Cos(transform.rotation.eulerAngles.z * Mathf.Deg2Rad));
+        _frictionForce =  Quaternion.Euler(0, 0,90) * (_normalForce*frictionParam) * (transform.rotation.eulerAngles.z>300? 1 : -1);
     }
 
     public void ApplyForce(Vector3 force)

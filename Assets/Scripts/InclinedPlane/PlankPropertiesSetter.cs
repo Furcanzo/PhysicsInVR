@@ -24,13 +24,13 @@ public class PlankPropertiesSetter : MonoBehaviour
 
     public void SetStaticFriction(float staticFriction)
     {
-        _material.material.staticFriction = Math.Abs((staticFriction+1)/2);
+        _material.sharedMaterial.staticFriction = Math.Abs((staticFriction+1)/2);
         //todo force friction update
     }
     
     public void SetDynamicFriction(float dynamicFriction)
     {
-        _material.material.dynamicFriction = Math.Abs((dynamicFriction+1)/2);
+        _material.sharedMaterial.dynamicFriction = Math.Abs((dynamicFriction+1)/2);
         //todo force friction update
         
     }
