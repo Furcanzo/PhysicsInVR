@@ -157,10 +157,10 @@ public class ShowVectors : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        //todo check
-        float frictionParam = _rb.velocity != Vector3.zero //Check if the object is moving
-            ? other.collider.sharedMaterial.dynamicFriction //If it use the dynamic friction parameter
-            : other.collider.sharedMaterial.staticFriction; //Otherwise use the static friction
+        //TODO check
+        float frictionParam = _rb.velocity.magnitude != 0 //Check if the object is moving
+            ? GetComponent<Collider>().material.dynamicFriction //If it use the dynamic friction parameter
+            : GetComponent<Collider>().material.staticFriction; //Otherwise use the static friction
         
         _normalForce = Quaternion.Euler(0, 0,transform.rotation.eulerAngles.z) * (-_gravityForce * (float)Math.Cos(transform.rotation.eulerAngles.z * Mathf.Deg2Rad));
         _frictionForce =  Quaternion.Euler(0, 0,90) * (_normalForce*frictionParam) * (transform.rotation.eulerAngles.z>300? 1 : -1);

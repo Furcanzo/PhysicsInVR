@@ -4,8 +4,6 @@ using UnityEngine.Events;
 
 public class Lever : MonoBehaviour
 {
-    // [-1, 1]
-    public float startingValue = 0;
     public UnityEvent<float> onMove;
     
     private float _oldAngle;
@@ -21,7 +19,7 @@ public class Lever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Math.Abs(_hingeJoint.angle - _oldAngle) > 0.2f)
+        if (Math.Abs(_hingeJoint.angle - _oldAngle) > 0.1f)
         {
             _value = AngleToValue(_hingeJoint.angle);
             onMove.Invoke(_value);
@@ -30,7 +28,6 @@ public class Lever : MonoBehaviour
         _oldAngle = _hingeJoint.angle;
     }
 
-    //max 420 min 300 
     private float AngleToValue(float angle)
     {
         return angle / 60.0f;
