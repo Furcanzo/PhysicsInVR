@@ -19,7 +19,7 @@ public class Lever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Math.Abs(_hingeJoint.angle - _oldAngle) > 0.1f)
+        if (Math.Abs(_hingeJoint.angle - _oldAngle) > 0.05f)
         {
             _value = AngleToValue(_hingeJoint.angle);
             onMove.Invoke(_value);

@@ -36,6 +36,7 @@ public class Spawn : MonoBehaviour
         vectors.vectorModel = vectorModel;
         vectors.showFriction = true;
         vectors.showNormal = true;
+        vectors.showGravity = true;
         vectors.scaleFactor = cubeVectorScaleFactor;
         _cube.transform.rotation = transform.rotation;
         _cube.transform.position = transform.position;
