@@ -6,10 +6,10 @@ public class BodyFallingSpawn : MonoBehaviour
     public float massOfCube = 2;
     public GameObject vectorModel;
     public float cubeVectorScaleFactor = 20.0f;
-    public float cubeDimension = 0.5f;
     public float gravity = Physics.gravity.magnitude;
-
-    private float _cubeScaling = 0.2f;
+    public float cubeScaling = 0.8f;
+    
+    private float _cubeDimension;
     private GameObject _cube;
     private Rigidbody _rb;
     private ShowVectors _vectors;
@@ -22,9 +22,10 @@ public class BodyFallingSpawn : MonoBehaviour
         }
 
         _cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        _cube.transform.localScale = new Vector3(cubeDimension, cubeDimension, cubeDimension);
         _cube.AddComponent<Rigidbody>().mass = massOfCube;
         _rb = _cube.GetComponent<Rigidbody>();
+        _cubeDimension = _rb.mass * cubeScaling;
+        _cube.transform.localScale = new Vector3(_cubeDimension, _cubeDimension, _cubeDimension);
         _vectors = _cube.AddComponent<ShowVectors>();
         _vectors.vectorModel = vectorModel;
         _vectors.showAddedForce = true;
@@ -46,12 +47,11 @@ public class BodyFallingSpawn : MonoBehaviour
     public void SetMass(float mass)
     {
         massOfCube = (mass + 2);
-        cubeDimension = massOfCube * _cubeScaling;
+        _cubeDimension = massOfCube * cubeScaling;
         if (_cube)
         {
-            _cube.transform.localScale = new Vector3(cubeDimension, cubeDimension, cubeDimension);
+            _cube.transform.localScale = new Vector3(_cubeDimension, _cubeDimension, _cubeDimension);
             _rb.mass = massOfCube;
-            _rb.WakeUp();
         }
     }
 
