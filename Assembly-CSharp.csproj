@@ -41,9 +41,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BodyFalling\BodyFallingSpawn.cs" />
      <Compile Include="Assets\Scripts\HandPresencePhysics.cs" />
      <Compile Include="Assets\Scripts\InclinedPlane\PlankPropertiesSetter.cs" />
-     <Compile Include="Assets\Scripts\InclinedPlane\Spawn.cs" />
+     <Compile Include="Assets\Scripts\CharacterMovementHelper.cs" />
+     <Compile Include="Assets\Scripts\InclinedPlane\InclinedPlaneSpawn.cs" />
      <Compile Include="Assets\Scripts\Button.cs" />
      <Compile Include="Assets\Scripts\ShowVectors.cs" />
      <Compile Include="Assets\Scripts\Lever.cs" />
@@ -282,10 +284,10 @@
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="ReportGeneratorMerged">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     <HintPath>C:\Users\furca\Documents\GitHub\PhysicsInVR\Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     <HintPath>C:\Users\furca\Documents\GitHub\PhysicsInVR\Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Android.Types">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -659,137 +661,196 @@
      <Reference Include="System.Xml.Serialization">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VSCode.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.Management.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Timeline">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TextMeshPro">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.Interaction.Toolkit">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Subsystem.Registration">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.Subsystem.Registration.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEditor.UI">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.InputSystem">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Rider.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEngine.SpatialTracking">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEngine.UI">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.EditorCoroutines.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.CoreUtils.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.OpenXR.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Timeline.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.CoreUtils">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.CoreUtils.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.Management">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.Oculus.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.Oculus.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.OpenXR">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.OpenXR.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEditor.SpatialTracking">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.State">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.Oculus">
-     <HintPath>C:\Users\Roberto\Documents\Repo\PhysicsInVR\Library\ScriptAssemblies\Unity.XR.Oculus.dll</HintPath>
-     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
+      <Project>{d70c66da-85c5-0d23-4fec-c6f3e40b5cd0}</Project>
+      <Name>Unity.VisualScripting.Flow.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{f858116c-9093-37c0-f116-0e113d719fe4}</Project>
+      <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{26262940-9809-3227-b944-a126b3433f7b}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
+      <Project>{0e2a7224-aab8-49d2-883f-fd32f077ff94}</Project>
+      <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Performance.Profile-Analyzer.Editor.csproj">
+      <Project>{f87e03ad-390e-641c-e9a3-b7308e8df816}</Project>
+      <Name>Unity.Performance.Profile-Analyzer.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.csproj">
+      <Project>{3eb59860-8cff-252f-3a4d-0bb365528ded}</Project>
+      <Name>Unity.XR.OpenXR.Features.OculusQuestSupport.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj">
+      <Project>{41f904e0-bf09-ca49-5bd9-199f409d5757}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Management.Editor.csproj">
+      <Project>{edc3c934-7cd0-9dcc-297c-8cabcdfe6332}</Project>
+      <Name>Unity.XR.Management.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{a5b5b9fd-2422-0c71-1961-5ef60c2136a3}</Project>
+      <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
+      <Project>{e4276a59-56be-8758-4303-b4d33e063390}</Project>
+      <Name>Unity.VisualScripting.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{875b0ede-661a-770b-b690-a6125c5f570a}</Project>
+      <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
+      <Project>{bcaeb7a6-c81d-54dd-5d7e-e5fcecf715e5}</Project>
+      <Name>Unity.VisualScripting.State.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
+      <Project>{f6f76a8a-c8a2-5cf9-47ac-dbfee806462e}</Project>
+      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.csproj">
+      <Project>{f9878ebb-3d5b-26ff-8f3a-0a96b558d275}</Project>
+      <Name>Unity.XR.Interaction.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
+      <Project>{1887e300-ce9a-b2e4-0939-c09137951e3c}</Project>
+      <Name>Unity.ProBuilder.AddOns.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.csproj">
+      <Project>{60b7fbce-0bf5-8afe-5f18-924289605919}</Project>
+      <Name>Unity.ProBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj">
+      <Project>{b5b86499-8349-9455-9785-8db54935f22a}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Subsystem.Registration.csproj">
+      <Project>{6e88928e-b7d6-40a0-71a6-bde70f6915fb}</Project>
+      <Name>Unity.Subsystem.Registration</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Editor.csproj">
+      <Project>{44e40037-f42f-0369-2866-4db0792fca1a}</Project>
+      <Name>Unity.ProBuilder.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{00a49da3-90e0-9c65-ef39-f8810e49fdb2}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InputSystem.csproj">
+      <Project>{aea0c1ed-2d74-7196-900a-cd973c4ee11c}</Project>
+      <Name>Unity.InputSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{65234057-4604-bbf2-f3ea-ef9cd18c606a}</Project>
+      <Name>Unity.Rider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
+      <Project>{11606e51-7138-f931-fa5b-1eb4dff77066}</Project>
+      <Name>Unity.PlasticSCM.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.csproj">
+      <Project>{d47b0015-975a-eaa3-8ca9-1a16f60d6e59}</Project>
+      <Name>Unity.XR.OpenXR.Features.OculusQuestSupport</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.SpatialTracking.csproj">
+      <Project>{5448419b-615f-4090-7cf5-03a1f550f45d}</Project>
+      <Name>UnityEngine.SpatialTracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
+      <Project>{87b19fbf-9f34-e43c-51b7-461157a32ef7}</Project>
+      <Name>Unity.VisualScripting.Flow</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{6c93ce15-aa90-62cb-6699-250122099158}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.csproj">
+      <Project>{9a5d71d5-419a-80d0-a649-dbc4648e9526}</Project>
+      <Name>Unity.VisualScripting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
+      <Project>{056b7464-c037-8a49-b8c6-4f66aa7c7a51}</Project>
+      <Name>Unity.EditorCoroutines.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.CoreUtils.Editor.csproj">
+      <Project>{4666366d-091f-3244-5421-61c85e224d19}</Project>
+      <Name>Unity.XR.CoreUtils.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
+      <Project>{7e71c982-303e-175e-82a2-9224bdc72384}</Project>
+      <Name>Unity.ProBuilder.AssetIdRemapUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.csproj">
+      <Project>{d66fcc06-69fc-c89a-57a5-d7c1c2ec3e38}</Project>
+      <Name>UnityEngine.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
+      <Project>{55bf440b-10c5-34d0-ec60-5e5092aed4dd}</Project>
+      <Name>Unity.VisualScripting.Shared.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.OpenXR.Editor.csproj">
+      <Project>{d72e8eb5-8500-bd99-c585-47c81c3bf0c0}</Project>
+      <Name>Unity.XR.OpenXR.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{53b70131-8a88-6296-e033-4b5dce7e79de}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.CoreUtils.csproj">
+      <Project>{7455f66b-1639-1bf1-37b3-731cb0eef5eb}</Project>
+      <Name>Unity.XR.CoreUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
+      <Project>{d7963720-b0d6-d781-9992-07a40bf4bef7}</Project>
+      <Name>UnityEditor.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Management.csproj">
+      <Project>{cf832e1d-f9b0-ccfa-7dc5-cade8c51db9e}</Project>
+      <Name>Unity.XR.Management</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Oculus.Editor.csproj">
+      <Project>{3cddc11b-79be-71aa-f44f-c98e0aa48715}</Project>
+      <Name>Unity.XR.Oculus.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.OpenXR.csproj">
+      <Project>{6bd91f26-4fa8-3208-86b4-78e5b2d154f3}</Project>
+      <Name>Unity.XR.OpenXR</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.SpatialTracking.csproj">
+      <Project>{1693d05e-d053-a306-bf6b-120defc74a4b}</Project>
+      <Name>UnityEditor.SpatialTracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.csproj">
+      <Project>{669eb514-d840-683b-0991-8299eb37597e}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.OpenXR.Features.ConformanceAutomation.csproj">
+      <Project>{14454447-cfc7-ad0f-70c6-b73180670997}</Project>
+      <Name>Unity.XR.OpenXR.Features.ConformanceAutomation</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Editor.csproj">
+      <Project>{90851942-c468-5838-aeb7-fe8531cfd992}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.csproj">
+      <Project>{0c1fd517-2cd8-5b7d-606f-42c7226b7fd6}</Project>
+      <Name>Unity.XR.OpenXR.Features.RuntimeDebugger.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.csproj">
+      <Project>{34a1d315-3afc-3163-5c77-46d67f06ee2c}</Project>
+      <Name>Unity.VisualScripting.State</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Oculus.csproj">
+      <Project>{48c226d7-98d7-f803-de89-131db3c495e2}</Project>
+      <Name>Unity.XR.Oculus</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

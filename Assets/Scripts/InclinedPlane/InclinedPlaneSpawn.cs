@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Spawn : MonoBehaviour
+public class InclinedPlaneSpawn : MonoBehaviour
 {
     public float massOfCube = 2;
     public GameObject vectorModel;
