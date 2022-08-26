@@ -16,8 +16,6 @@ public class ShowVectors : MonoBehaviour
     public bool showAddedForce;
     
     private Rigidbody _rb;
-    private PhysicMaterial _material;
-    
     private Vector3 _collisionForce;
     private GameObject _collisionVector;
     private Vector3 _gravityForce;
@@ -33,7 +31,6 @@ public class ShowVectors : MonoBehaviour
     void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
-        _material = gameObject.GetComponent<Collider>().material;
         if (showCollision)
         {
             _collisionVector = Instantiate(vectorModel, gameObject.transform, true);
@@ -157,7 +154,6 @@ public class ShowVectors : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        //TODO check
         float frictionParam = _rb.velocity.magnitude >= 0.1f //Check if the object is moving 
             ? GetComponent<Collider>().material.dynamicFriction //If it use the dynamic friction parameter
             : GetComponent<Collider>().material.staticFriction; //Otherwise use the static friction
@@ -168,7 +164,11 @@ public class ShowVectors : MonoBehaviour
 
     public void ApplyForce(Vector3 force)
     {
-        _addedForce = force;
+        if (!_rb)
+        {
+            _rb = gameObject.GetComponent<Rigidbody>();
+        }
+        _addedForce = force; 
         _rb.AddForce(force);
     }
 }
