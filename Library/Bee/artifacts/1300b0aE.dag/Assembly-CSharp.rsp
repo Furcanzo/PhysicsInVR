@@ -382,6 +382,7 @@
 "Assets/Scripts/ParabolicMotion/CannonInclinationSetter.cs"
 "Assets/Scripts/ParabolicMotion/ParabolicMotionSpawn.cs"
 "Assets/Scripts/ParabolicMotion/StandHeightSetter.cs"
+"Assets/Scripts/RayToggler.cs"
 "Assets/Scripts/ShowVectors.cs"
 -langversion:9.0
 

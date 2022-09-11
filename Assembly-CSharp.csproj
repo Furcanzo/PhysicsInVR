@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\InclinedPlane\InclinedPlaneSpawn.cs" />
      <Compile Include="Assets\Scripts\Button.cs" />
      <Compile Include="Assets\Scripts\ShowVectors.cs" />
+     <Compile Include="Assets\Scripts\RayToggler.cs" />
      <Compile Include="Assets\Scripts\Lever.cs" />
      <Compile Include="Assets\Scripts\ParabolicMotion\ParabolicMotionSpawn.cs" />
      <Compile Include="Assets\Scripts\ParabolicMotion\StandHeightSetter.cs" />

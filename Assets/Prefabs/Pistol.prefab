@@ -169,7 +169,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -295,6 +295,7 @@ MonoBehaviour:
   cannonballVectorScaleFactor: 2
   cannonballScaling: 0.05
   startForce: 100
+  elastic: 0
   Aim: {fileID: 2195436665807345605}
 --- !u!1 &2195436667804015343
 GameObject:
