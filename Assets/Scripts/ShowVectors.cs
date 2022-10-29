@@ -4,7 +4,11 @@ using UnityEngine;
 public class ShowVectors : MonoBehaviour
 {
     
-    public GameObject vectorModel;
+    public GameObject vectorModelCollision;
+    public GameObject vectorModelGravity;
+    public GameObject vectorModelFriction;
+    public GameObject vectorModelNormal;
+    public GameObject vectorModelAddedForce;
 
     public float scaleFactor = 5.0f;
     public float proportion = 2.0f;
@@ -33,23 +37,23 @@ public class ShowVectors : MonoBehaviour
         _rb = gameObject.GetComponent<Rigidbody>();
         if (showCollision)
         {
-            _collisionVector = Instantiate(vectorModel, gameObject.transform, true);
+            _collisionVector = Instantiate(vectorModelCollision, gameObject.transform, true);
         }
         if (showGravity)
         {
-            _gravityVector = Instantiate(vectorModel, gameObject.transform, true);
+            _gravityVector = Instantiate(vectorModelGravity, gameObject.transform, true);
         }
         if (showFriction)
         {
-            _frictionVector = Instantiate(vectorModel, gameObject.transform, true);
+            _frictionVector = Instantiate(vectorModelFriction, gameObject.transform, true);
         }
         if (showNormal)
         {
-            _normalVector = Instantiate(vectorModel, gameObject.transform, true);
+            _normalVector = Instantiate(vectorModelNormal, gameObject.transform, true);
         }
         if (showAddedForce)
         {
-            _addedForceVector = Instantiate(vectorModel, gameObject.transform, true);
+            _addedForceVector = Instantiate(vectorModelAddedForce, gameObject.transform, true);
         }
     }
     

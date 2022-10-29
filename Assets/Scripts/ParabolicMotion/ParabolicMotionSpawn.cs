@@ -5,7 +5,8 @@ namespace ParabolicMotion
     public class ParabolicMotionSpawn : MonoBehaviour
     {
         public float massOfCannonball = 2;
-        public GameObject vectorModel;
+        public GameObject vectorModelAddedForce;
+        public GameObject vectorModelGravity;
         public float cannonballVectorScaleFactor = 2.0f;
         public float cannonballScaling = 0.8f;
         public float startForce = 2500.0f;
@@ -29,7 +30,8 @@ namespace ParabolicMotion
             _cannonballDimension = _rb.mass * cannonballScaling;
             _cannonball.transform.localScale = new Vector3(_cannonballDimension, _cannonballDimension, _cannonballDimension);
             _vectors = _cannonball.AddComponent<ShowVectors>();
-            _vectors.vectorModel = vectorModel;
+            _vectors.vectorModelAddedForce = vectorModelAddedForce;
+            _vectors.vectorModelGravity = vectorModelGravity;
             _vectors.showAddedForce = true;
             _vectors.showGravity = true;
             _vectors.scaleFactor = cannonballVectorScaleFactor;

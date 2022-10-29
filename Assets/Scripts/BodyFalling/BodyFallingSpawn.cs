@@ -28,7 +28,7 @@ namespace BodyFalling
             _cubeDimension = _rb.mass * cubeScaling;
             _cube.transform.localScale = new Vector3(_cubeDimension, _cubeDimension, _cubeDimension);
             _vectors = _cube.AddComponent<ShowVectors>();
-            _vectors.vectorModel = vectorModel;
+            _vectors.vectorModelAddedForce = vectorModel;
             _vectors.showAddedForce = true;
             _vectors.scaleFactor = cubeVectorScaleFactor;
             _rb.useGravity = false;

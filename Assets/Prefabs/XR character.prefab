@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 5782870873412407105}
   - component: {fileID: 5782870873412407108}
   - component: {fileID: 5782870873412407109}
+  - component: {fileID: 1997598372}
   m_Layer: 0
   m_Name: Locomotion System
   m_TagString: Untagged
@@ -437,6 +438,19 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &1997598372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782870873412407118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1e5ec1bb372384395b66b7032331cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RayInteractor: {fileID: 7530188754642993448}
 --- !u!1 &5782870873631851770
 GameObject:
   m_ObjectHideFlags: 0

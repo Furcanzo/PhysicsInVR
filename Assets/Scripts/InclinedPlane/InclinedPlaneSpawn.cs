@@ -5,7 +5,9 @@ namespace InclinedPlane
     public class InclinedPlaneSpawn : MonoBehaviour
     {
         public float massOfCube = 2;
-        public GameObject vectorModel;
+        public GameObject vectorModelFriction;
+        public GameObject vectorModelGravity;
+        public GameObject vectorModelNormal;
         public float cubeStatFriction = 0.5f;
         public float cubeDynFriction = 0.5f;
         public float cubeVectorScaleFactor = 20.0f;
@@ -35,7 +37,9 @@ namespace InclinedPlane
             _cube.GetComponent<Collider>().material = cubeMaterial;
             _rb = _cube.GetComponent<Rigidbody>();
             ShowVectors vectors = _cube.AddComponent<ShowVectors>();
-            vectors.vectorModel = vectorModel;
+            vectors.vectorModelFriction = vectorModelFriction;
+            vectors.vectorModelNormal = vectorModelGravity;
+            vectors.vectorModelGravity = vectorModelNormal;
             vectors.showFriction = true;
             vectors.showNormal = true;
             vectors.showGravity = true;
