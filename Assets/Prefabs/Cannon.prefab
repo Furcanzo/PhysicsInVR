@@ -248,7 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   massOfCannonball: 2
-  vectorModel: {fileID: 919132149155446097, guid: ee657eaa294856140a8c1e2013e59a11, type: 3}
+  vectorModelAddedForce: {fileID: 919132149155446097, guid: ee657eaa294856140a8c1e2013e59a11, type: 3}
+  vectorModelGravity: {fileID: 919132149155446097, guid: ee657eaa294856140a8c1e2013e59a11, type: 3}
   cannonballVectorScaleFactor: 2
   cannonballScaling: 0.8
   startForce: 2500

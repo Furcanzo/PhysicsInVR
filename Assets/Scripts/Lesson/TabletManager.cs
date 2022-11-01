@@ -39,6 +39,7 @@ public class TabletManager : MonoBehaviour
     
     public void Explain()
     {
+        _sound.Stop();
         _sound.clip = explanations[_actualSlideIndex];
         _sound.Play();
     }
