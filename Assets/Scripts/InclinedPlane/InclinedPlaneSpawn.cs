@@ -51,7 +51,7 @@ namespace InclinedPlane
     
         public void SetMass(float mass)
         { 
-            massOfCube = (mass+2);
+            massOfCube = mass;
             cubeDimension = massOfCube * _cubeScaling;
             if (_cube)
             {
@@ -63,7 +63,7 @@ namespace InclinedPlane
 
         public void SetStaticFriction(float staticFriction)
         { 
-            cubeStatFriction = (staticFriction+1)/2;
+            cubeStatFriction = staticFriction;
             if (_cube)
             {
                 _cube.GetComponent<Collider>().material.staticFriction = cubeStatFriction;
@@ -73,7 +73,7 @@ namespace InclinedPlane
     
         public void SetDynamicFriction(float dynamicFriction)
         {
-            cubeDynFriction = (dynamicFriction+1)/2;
+            cubeDynFriction = dynamicFriction;
             if (_cube)
             {
                 _cube.GetComponent<Collider>().material.dynamicFriction = cubeDynFriction;

@@ -19,6 +19,10 @@ namespace ParabolicMotion
 
         public void LoadCannon()
         {
+        }
+
+        public void Fire()
+        {
             if (_cannonball)
             {
                 Destroy(_cannonball);
@@ -37,21 +41,12 @@ namespace ParabolicMotion
             _vectors.scaleFactor = cannonballVectorScaleFactor;
             _cannonball.AddComponent<TrailRenderer>();
             _cannonball.transform.position = transform.position;
-            _rb.isKinematic = true;
-        }
-
-        public void Fire()
-        {
-            if (_cannonball)
-            {
-                _rb.isKinematic = false;
-                _vectors.ApplyForce(startForce * (Aim.transform.position - transform.position).normalized);
-            }
+            _vectors.ApplyForce(startForce * (Aim.transform.position - transform.position).normalized);
         }
 
         public void SetMass(float mass)
         {
-            massOfCannonball = (mass + 2);
+            massOfCannonball = mass;
             _cannonballDimension = massOfCannonball * cannonballScaling;
             if (_cannonball)
             {
@@ -62,7 +57,7 @@ namespace ParabolicMotion
 
         public void SetForce(float force)
         {
-            this.startForce = (force+1)*2500.0f;
+            this.startForce = force;
         }
 
     }

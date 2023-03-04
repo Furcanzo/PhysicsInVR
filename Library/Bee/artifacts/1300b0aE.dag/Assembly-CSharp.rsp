@@ -380,7 +380,7 @@
 "Assets/Scripts/Impacts/Pistol.cs"
 "Assets/Scripts/InclinedPlane/InclinedPlaneSpawn.cs"
 "Assets/Scripts/InclinedPlane/PlankPropertiesSetter.cs"
-"Assets/Scripts/Lesson/TabletManager.cs"
+"Assets/Scripts/Lesson/Lesson.cs"
 "Assets/Scripts/Lever.cs"
 "Assets/Scripts/ParabolicMotion/CannonInclinationSetter.cs"
 "Assets/Scripts/ParabolicMotion/ParabolicMotionSpawn.cs"

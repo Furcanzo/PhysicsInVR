@@ -6,8 +6,7 @@ namespace ParabolicMotion
     {
         public void SetHeight(float height)
         {
-            float realHeight = (height + 1) * 2.5f;
-            transform.position = new Vector3( transform.position.x,realHeight, transform.position.z);
+            transform.position = new Vector3( transform.position.x, height, transform.position.z);
         }
     }
 }

@@ -5,7 +5,6 @@ namespace InclinedPlane
     public class PlankPropertiesSetter : MonoBehaviour
     {
         private Rigidbody _rb;
-        public float maxInclination = 60.0f;
     
         private void Start()
         {
@@ -15,7 +14,7 @@ namespace InclinedPlane
         public void SetInclination(float inclination)
         {
             Vector3 actual = _rb.rotation.eulerAngles;
-            actual.z = inclination*maxInclination;
+            actual.z = inclination;
             Quaternion rotation = Quaternion.Euler(actual);
 
             _rb.rotation = rotation;

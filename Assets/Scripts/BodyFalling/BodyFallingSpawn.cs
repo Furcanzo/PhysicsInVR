@@ -47,7 +47,7 @@ namespace BodyFalling
 
         public void SetMass(float mass)
         {
-            massOfCube = (mass + 2);
+            massOfCube = mass;
             _cubeDimension = massOfCube * cubeScaling;
             if (_cube)
             {
@@ -58,7 +58,7 @@ namespace BodyFalling
 
         public void SetGravity(float gravity)
         {
-            this.gravity = (gravity + 1)*9.81f;
+            this.gravity = gravity;
         }
     
     }

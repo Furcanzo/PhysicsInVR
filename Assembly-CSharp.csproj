@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ParabolicMotion\CannonInclinationSetter.cs" />
+     <Compile Include="Assets\Scripts\Lesson\Lesson.cs" />
      <Compile Include="Assets\Scripts\Impacts\Pistol.cs" />
      <Compile Include="Assets\Scripts\Character\SetMovementSystem.cs" />
      <Compile Include="Assets\Scripts\BodyFalling\BodyFallingSpawn.cs" />
@@ -49,7 +50,6 @@
      <Compile Include="Assets\Scripts\InclinedPlane\PlankPropertiesSetter.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterMovementHelper.cs" />
      <Compile Include="Assets\Scripts\InclinedPlane\InclinedPlaneSpawn.cs" />
-     <Compile Include="Assets\Scripts\Lesson\TabletManager.cs" />
      <Compile Include="Assets\Scripts\Utils\ToggleManager.cs" />
      <Compile Include="Assets\Scripts\Button.cs" />
      <Compile Include="Assets\Scripts\ShowVectors.cs" />
