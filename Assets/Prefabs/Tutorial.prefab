@@ -175,7 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slides: []
   explanations: []
-  _actualSlide: {fileID: 0}
+  actualSlide: {fileID: 0}
+  sound: {fileID: 7254744186206130993}
 --- !u!1 &6832172410268115255
 GameObject:
   m_ObjectHideFlags: 0

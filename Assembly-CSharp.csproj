@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\InclinedPlane\PlankPropertiesSetter.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterMovementHelper.cs" />
      <Compile Include="Assets\Scripts\InclinedPlane\InclinedPlaneSpawn.cs" />
+     <Compile Include="Assets\Scripts\Impacts\TargetSpawn.cs" />
      <Compile Include="Assets\Scripts\Utils\ToggleManager.cs" />
      <Compile Include="Assets\Scripts\Button.cs" />
      <Compile Include="Assets\Scripts\ShowVectors.cs" />
@@ -57,6 +58,7 @@
      <Compile Include="Assets\Scripts\Utils\StartGame.cs" />
      <Compile Include="Assets\Scripts\Lever.cs" />
      <Compile Include="Assets\Scripts\ParabolicMotion\ParabolicMotionSpawn.cs" />
+     <Compile Include="Assets\Scripts\Impacts\PistolsSettings.cs" />
      <Compile Include="Assets\Scripts\ParabolicMotion\StandHeightSetter.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

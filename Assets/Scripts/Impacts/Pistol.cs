@@ -20,6 +20,10 @@ namespace Impacts
 
         public void Shoot()
         {
+            if (_cannonball)
+            {
+                Destroy(_cannonball);
+            }
             _cannonball = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             PhysicMaterial cannonballMaterial = new PhysicMaterial
             {

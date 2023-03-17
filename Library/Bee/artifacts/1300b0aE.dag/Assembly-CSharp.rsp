@@ -378,6 +378,8 @@
 "Assets/Scripts/Character/RayToggler.cs"
 "Assets/Scripts/Character/SetMovementSystem.cs"
 "Assets/Scripts/Impacts/Pistol.cs"
+"Assets/Scripts/Impacts/PistolsSettings.cs"
+"Assets/Scripts/Impacts/TargetSpawn.cs"
 "Assets/Scripts/InclinedPlane/InclinedPlaneSpawn.cs"
 "Assets/Scripts/InclinedPlane/PlankPropertiesSetter.cs"
 "Assets/Scripts/Lesson/Lesson.cs"

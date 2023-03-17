@@ -7,27 +7,19 @@ public class Lesson : MonoBehaviour
     public List<Texture> slides;
     public List<AudioClip> explanations;
     public RawImage actualSlide;
+    public AudioSource sound;
 
     private int _actualSlideIndex;
-    private AudioSource _sound;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        _sound = GetComponentInChildren<AudioSource>();
-    }
-    
     public void ButtonPressed()
     {
-        if (_sound.isPlaying)
+        if (sound.isPlaying)
         {
-            Debug.Log("is");
             CancelInvoke();
             Rewind();
         }
         else
         {
-            Debug.Log("isn't");
             CancelInvoke();
             Rewind();
             Explain();
@@ -50,7 +42,7 @@ public class Lesson : MonoBehaviour
     
     private void Rewind()
     {
-        _sound.Stop();
+        sound.Stop();
         actualSlide.color = Color.clear;
         _actualSlideIndex = 0;
         actualSlide.texture = slides[_actualSlideIndex];
@@ -59,8 +51,8 @@ public class Lesson : MonoBehaviour
     private void Explain()
     {
         actualSlide.color = Color.white;
-        _sound.clip = explanations[_actualSlideIndex];
-        _sound.Play();
-        Invoke(nameof(Next), _sound.clip.length);
+        sound.clip = explanations[_actualSlideIndex];
+        sound.Play();
+        Invoke(nameof(Next), sound.clip.length +0.5f);
     }
 }
